@@ -1,0 +1,10 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int viters=0,x=1;
+        for(int n:nums){
+           if(viters==0) x=n;
+           viters += n==x ? 1 :-1;
+        }
+        return x;
+    }
+}
