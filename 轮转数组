@@ -1,0 +1,16 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int l=nums.length;
+        int i=k%l;
+        s(nums,0,l-1);
+        s(nums,0,i-1);
+        s(nums,i,l-1);
+    }
+    void s(int[] nums,int l,int r){
+        while(l<r){
+            int tmp=nums[l];
+            nums[l++]=nums[r];
+            nums[r--]=tmp;
+        }
+    }
+}
