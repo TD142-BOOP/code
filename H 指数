@@ -1,0 +1,16 @@
+class Solution {
+    public int hIndex(int[] citations) {
+        int n=citations.length;
+        int[] ant=new int[n+1];
+        for(int c:citations){
+            ant[Math.min(c,n)]++;
+        }
+        int s=0;
+        for(int i=n;;i--){
+            s+=ant[i];
+            if(s>=i){
+                return i;
+            }
+        }
+    }
+}
